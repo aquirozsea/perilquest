@@ -1,0 +1,35 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PerilQuest</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <h1>Welcome to PerilQuest!</h1>
+
+    <h2>Matches</h2>
+
+    {% if in_progress %}
+        <h4>Matches in progress</h4>
+        {% for match in in_progress %}
+          {{ match }} <br>
+        {% endfor %}
+    {% endif %}
+
+    {% if open %}
+        <h4>Open matches</h4>
+        {% for match in open %}
+          {{ match }} <br>
+        {% endfor %}
+    {% endif %}
+
+    {% if completed %}
+        <h4>Completed matches</h4>
+        {% for match in completed %}
+          {{ match }} <br>
+        {% endfor %}
+    {% endif %}
+
+</body>
+</html>
