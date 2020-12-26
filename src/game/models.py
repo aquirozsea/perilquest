@@ -73,6 +73,7 @@ class Answer(models.Model):
     match = models.ForeignKey(Match, related_name=RELATED_NAME, on_delete=models.CASCADE)
     player = models.ForeignKey(User, related_name=RELATED_NAME, on_delete=models.CASCADE)
     question = models.ForeignKey(Question, related_name=RELATED_NAME, on_delete=models.CASCADE)
+    ts = models.DateTimeField(default=now, editable=False)
     submission = models.TextField()
     value = models.IntegerField(null=True)
 
